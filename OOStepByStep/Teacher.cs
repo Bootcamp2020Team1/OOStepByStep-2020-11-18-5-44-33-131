@@ -2,7 +2,7 @@
 
 namespace OOStepByStep
 {
-    public class Teacher : Person
+    public class Teacher : Person, IObserver
     {
         public Teacher(string name, int age) : base(name, age)
         {
@@ -22,6 +22,11 @@ namespace OOStepByStep
             }
 
             return base.Introduce() + " I am a teacher.";
+        }
+
+        public string Say()
+        {
+            return Introduce() + $" Welcome Tom join class {Class.ClassNumber}.";
         }
     }
 }

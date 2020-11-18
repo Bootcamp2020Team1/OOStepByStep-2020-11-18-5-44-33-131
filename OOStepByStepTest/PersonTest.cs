@@ -84,5 +84,19 @@ namespace OOStepByStepTest
             //then
             Assert.Equal(expected, actual);
         }
-    }
+
+        //AC4
+        [Fact]
+        public void Should_Teacher_And_Student_Say_When_New_Student_Join()
+        {
+            //given
+            string expected = "My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Tom join class 2.My name is Tom. I am 18 years old. I am a student of class 2. Welcome Jim join class 2.";
+            var students = new List<Student>();
+            var classTested = new Class(2, new Teacher("Amy", 30), students);
+            //when
+            string actual = classTested.AddStudent(new Student("Tom", 18));
+            //then
+            Assert.Equal(expected, actual);
+        }
+}
 }

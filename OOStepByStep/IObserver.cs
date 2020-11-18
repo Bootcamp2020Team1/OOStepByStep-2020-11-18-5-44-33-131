@@ -6,6 +6,6 @@ namespace OOStepByStep
 {
     public interface IObserver
     {
-        public string Say(string name);
+        public string Say();
     }
 }

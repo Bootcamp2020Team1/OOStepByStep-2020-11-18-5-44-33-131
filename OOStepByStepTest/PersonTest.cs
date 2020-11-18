@@ -37,5 +37,21 @@ namespace OOStepByStepTest
             //then
             Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2.", actual);
         }
+
+        [Fact]
+        public void Should_welcome_new_student()
+        {
+            //given
+            var student = new Student("Tom", 18, new Class2());
+            var teacher = new Teacher("Amy", 30, new Class2());
+
+            var newStudent = new Student("Jim", 18, new Class2());
+            //when
+            var studentActual = student.Welcome(newStudent);
+            var teacherActual = teacher.Welcome(newStudent);
+            //then
+            Assert.Equal("My name is Tom. I am 18 years old. I am a student of class 2. Welcome Jim join class 2.", studentActual);
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher of class 2. Welcome Jim join class 2.", teacherActual);
+        }
     }
 }

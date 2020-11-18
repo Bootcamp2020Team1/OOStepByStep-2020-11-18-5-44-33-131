@@ -3,17 +3,18 @@
     using System;
     public class Person
     {
-        private string name;
-        private int age;
         public Person(string name, int age)
         {
-            this.name = name;
-            this.age = age;
+            Name = name;
+            Age = age;
         }
+
+        public string Name { get; private set; }
+        public int Age { get; private set; }
 
         public virtual string Introduce()
         {
-            return $"My name is {name}. I am {age} years old.";
+            return $"My name is {Name}. I am {Age} years old.";
         }
     }
 }

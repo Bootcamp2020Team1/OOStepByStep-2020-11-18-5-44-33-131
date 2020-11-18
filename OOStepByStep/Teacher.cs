@@ -13,5 +13,10 @@
         {
             return base.Introduce() + $" I am a teacher of class {classNumber}.";
         }
+
+        public string Welcome(Student newStudent)
+        {
+            return Introduce() + $" Welcome {newStudent.Name} join class {classNumber}.";
+        }
     }
 }

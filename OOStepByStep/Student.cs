@@ -3,13 +3,15 @@
     using System;
     public class Student : Person
     {
-        public Student(string name, int age) : base(name, age)
+        private readonly int classNumber;
+        public Student(string name, int age, IClass myClass) : base(name, age)
         {
+            classNumber = myClass.GetClassNumber();
         }
 
         public override string Introduce()
         {
-            return base.Introduce() + " I am a student.";
+            return base.Introduce() + $" I am a student of class {classNumber}.";
         }
     }
 }

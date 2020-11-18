@@ -15,5 +15,27 @@ namespace OOStepByStepTest
             //then
             Assert.Equal("My name is Tom. I am 21 years old.", actual);
         }
+
+        [Fact]
+        public void Should_introduce_from_student()
+        {
+            //given
+            var student = new Student("Tom", 18);
+            //when
+            var actual = student.Introduce();
+            //then
+            Assert.Equal("My name is Tom. I am 18 years old. I am a student.", actual);
+        }
+
+        [Fact]
+        public void Should_introduce_from_teacher()
+        {
+            //given
+            var teacher = new Teacher("Amy", 30);
+            //when
+            var actual = teacher.Introduce();
+            //then
+            Assert.Equal("My name is Amy. I am 30 years old. I am a teacher.", actual);
+        }
     }
 }

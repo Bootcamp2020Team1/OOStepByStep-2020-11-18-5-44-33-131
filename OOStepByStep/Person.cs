@@ -11,7 +11,7 @@
         public string Name { get; }
         public int Age { get; }
 
-        public string Introduce()
+        public virtual string Introduce()
         {
             return $"My name is {Name}. I am {Age} years old.";
         }

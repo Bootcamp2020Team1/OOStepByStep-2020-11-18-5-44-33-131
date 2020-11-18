@@ -1,14 +1,11 @@
-﻿namespace OOStepByStep
+﻿using System;
+
+namespace OOStepByStep
 {
     public class Student : Person
     {
         public Student(string name, int age) : base(name, age)
         {
-        }
-
-        public Student(string name, int age, Class studentClass) : base(name, age)
-        {
-            Class = studentClass;
         }
 
         public Class Class { get; set; }
@@ -17,7 +14,7 @@
         {
             if (Class != null)
             {
-                return base.Introduce() + $" I am a student of {Class.ClassName}.";
+                return base.Introduce() + $" I am a student of class {Class.ClassNumber}.";
             }
 
             return base.Introduce() + " I am a student.";

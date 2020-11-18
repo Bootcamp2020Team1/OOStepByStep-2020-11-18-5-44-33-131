@@ -4,13 +4,21 @@ namespace OOStepByStep
 {
     public class Class
     {
-        public Class(string className)
+        public Class(int classNumber)
         {
-            ClassName = className;
+            ClassNumber = classNumber;
         }
 
-        public string ClassName { get; private set; }
+        public Class(int classNumber, Teacher teacher, List<Student> students) : this(classNumber)
+        {
+            teacher.Class = this;
+            Teacher = teacher;
+            students.ForEach(student => student.Class = this);
+            Students = students;
+        }
+
+        public int ClassNumber { get; private set; }
         public List<Student> Students { get; private set; }
-        public Teacher Teacher { get; private set; }
+        public Teacher Teacher { get; }
     }
 }

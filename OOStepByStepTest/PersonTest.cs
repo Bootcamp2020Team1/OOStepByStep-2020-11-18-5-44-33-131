@@ -1,4 +1,8 @@
 using OOStepByStep;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using Xunit;
 
 namespace OOStepByStepTest
@@ -55,10 +59,12 @@ namespace OOStepByStepTest
         {
             //given
             string expected = "My name is Tom. I am 18 years old. I am a student of class 2.";
-            var person = new Student("Tom", 18, new Class("class 2"));
+            var students = new List<Student>();
+            students.Add(new Student("Tom", 18));
+            var classTested = new Class(2, new Teacher("Amy", 30), students);
 
             //when
-            string actual = person.Introduce();
+            string actual = classTested.Students[0].Introduce();
 
             //then
             Assert.Equal(expected, actual);
@@ -69,10 +75,11 @@ namespace OOStepByStepTest
         {
             //given
             string expected = "My name is Amy. I am 30 years old. I am a teacher of class 2.";
-            var person = new Teacher("Amy", 30, new Class("class 2"));
+            var students = new List<Student> { new Student("Tom", 18) };
+            var classTested = new Class(2, new Teacher("Amy", 30), students);
 
             //when
-            string actual = person.Introduce();
+            string actual = classTested.Teacher.Introduce();
 
             //then
             Assert.Equal(expected, actual);

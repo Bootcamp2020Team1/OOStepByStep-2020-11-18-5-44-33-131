@@ -4,15 +4,15 @@ using System.Text;
 
 namespace OOStepByStep
 {
-    public class Student : Person
+    public class Teacher : Person
     {
-        public Student(string name, int age) : base(name, age)
+        public Teacher(string name, int age) : base(name, age)
         {
         }
 
         public override string Introduce()
         {
-            return base.Introduce() + ". I am a student";
+            return base.Introduce() + ". I am a teacher";
         }
     }
 }

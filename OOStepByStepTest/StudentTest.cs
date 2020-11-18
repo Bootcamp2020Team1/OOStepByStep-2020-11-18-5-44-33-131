@@ -3,14 +3,14 @@ namespace OOStepByStepTest
     using OOStepByStep;
     using Xunit;
 
-    public class UnitTest1
+    public class StudentTest
     {
         [Fact]
-        public void Test1()
+        public void TestStudent()
         {
-            var student = new Student("Tom", 21);
+            var student = new Student("Tom", 18);
             //given
-            string expected = "My name is Tom. I am 21 years old";
+            string expected = "My name is Tom. I am 18 years old. I am a student";
 
             //when
             string actual = student.Introduce();

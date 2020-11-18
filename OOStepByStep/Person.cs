@@ -1,11 +1,11 @@
-﻿namespace OOStepByStepTest
+﻿namespace OOStepByStep
 {
     public class Person
     {
         public Person(string name, int age)
         {
-            this.Name = name;
-            this.Age = age;
+            Name = name;
+            Age = age;
         }
 
         public string Name { get; }

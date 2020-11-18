@@ -5,6 +5,7 @@ namespace OOStepByStepTest
 {
     public class PersonTest
     {
+        //AC1
         [Fact]
         public void Should_A_Person_Return_String_Contains_Name_And_Age_When_Introduce()
         {
@@ -19,6 +20,7 @@ namespace OOStepByStepTest
             Assert.Equal(expected, actual);
         }
 
+        //AC2
         [Fact]
         public void Should_A_Student_Return_String_Contains_Name_And_Age_And_Student_When_Introduce()
         {
@@ -39,6 +41,35 @@ namespace OOStepByStepTest
             //given
             string expected = "My name is Amy. I am 30 years old. I am a teacher.";
             var person = new Teacher("Amy", 30);
+
+            //when
+            string actual = person.Introduce();
+
+            //then
+            Assert.Equal(expected, actual);
+        }
+
+        //AC3
+        [Fact]
+        public void Should_Return_String_Contains_Name_Age_Student_And_Class_When_A_Student__With_Class_Introduce()
+        {
+            //given
+            string expected = "My name is Tom. I am 18 years old. I am a student of class 2.";
+            var person = new Student("Tom", 18, new Class("class 2"));
+
+            //when
+            string actual = person.Introduce();
+
+            //then
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Should_Return_String_Contains_Name_Age_Teacher_And_Class_When_A_Teacher_With_Class_Introduce()
+        {
+            //given
+            string expected = "My name is Amy. I am 30 years old. I am a teacher of class 2.";
+            var person = new Teacher("Amy", 30, new Class("class 2"));
 
             //when
             string actual = person.Introduce();

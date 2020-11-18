@@ -6,13 +6,13 @@ namespace OOStepByStep
 {
     public class Student : Person
     {
-        public Student(string name, int age) : base(name, age)
+        public Student(string name, int age, int classNumber) : base(name, age, classNumber)
         {
         }
 
         public override string Introduce()
         {
-            return base.Introduce() + ". I am a student";
+            return base.Introduce() + ". I am a student of class " + GetClassNumber().ToString();
         }
     }
 }

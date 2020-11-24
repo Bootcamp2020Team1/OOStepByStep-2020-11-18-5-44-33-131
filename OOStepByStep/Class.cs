@@ -4,13 +4,17 @@ namespace OOStepByStep
 {
     public class Class
     {
+        private List<IObserver> observers;
         public Class(int classNumber, Teacher teacher, List<Student> students)
         {
             ClassNumber = classNumber;
             teacher.Class = this;
-            Teacher = teacher;
             Students = new List<Student>();
+            observers = new List<IObserver>();
+            Teacher = teacher;
+            observers.Add(Teacher);
             students.ForEach(student => AddStudent(student));
+            students.ForEach(student => observers.Add(student));
         }
 
         public int ClassNumber { get; private set; }
@@ -20,8 +24,7 @@ namespace OOStepByStep
         public string Notify()
         {
             var welcomeMessage = string.Empty;
-            welcomeMessage += Teacher.Say();
-            Students.ForEach(student => welcomeMessage += student.Say());
+            observers.ForEach(observer => welcomeMessage += observer.Say());
             return welcomeMessage;
         }
 
@@ -29,6 +32,7 @@ namespace OOStepByStep
         {
             student.Class = this;
             Students.Add(student);
+            observers.Add(student);
             return Notify();
         }
     }

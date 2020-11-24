@@ -4,13 +4,9 @@ namespace OOStepByStep
 {
     public class Class
     {
-        public Class(int classNumber)
+        public Class(int classNumber, Teacher teacher, List<Student> students)
         {
             ClassNumber = classNumber;
-        }
-
-        public Class(int classNumber, Teacher teacher, List<Student> students) : this(classNumber)
-        {
             teacher.Class = this;
             Teacher = teacher;
             Students = new List<Student>();

@@ -6,20 +6,16 @@ namespace OOStepByStep
 {
     public class Person
     {
-        private int classNumber;
-        private string name;
-        private int age;
-        public Person(string name, int age, int classNumber)
+        private readonly string name;
+        private readonly int age;
+        public Person(string name, int age)
         {
             this.name = name;
             this.age = age;
-            this.classNumber = classNumber;
         }
 
-        public int GetClassNumber()
-        {
-            return classNumber;
-        }
+        protected string Name => name;
+        protected int Age => age;
 
         public virtual string Introduce()
         {

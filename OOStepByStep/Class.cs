@@ -13,8 +13,6 @@ namespace OOStepByStep
         {
             teacher.Class = this;
             Teacher = teacher;
-            //students.ForEach(student => student.Class = this);
-            //Students = students;
             Students = new List<Student>();
             students.ForEach(student => AddStudent(student));
         }

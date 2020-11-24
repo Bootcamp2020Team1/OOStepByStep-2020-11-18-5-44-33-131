@@ -2,18 +2,18 @@
 {
     public class Person
     {
+        private string name;
+        private int age;
+
         public Person(string name, int age)
         {
-            Name = name;
-            Age = age;
+            this.name = name;
+            this.age = age;
         }
-
-        public string Name { get; }
-        public int Age { get; }
 
         public virtual string Introduce()
         {
-            return $"My name is {Name}. I am {Age} years old.";
+            return $"My name is {name}. I am {age} years old.";
         }
     }
 }
